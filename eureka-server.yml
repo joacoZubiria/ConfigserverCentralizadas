@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: eureka-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
 
 eureka:
   client:
