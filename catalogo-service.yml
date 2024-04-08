@@ -52,6 +52,7 @@ management:
     web:
       exposure:
         include: '*'
+        exclude: beans, env
   health:
     circuitbreakers:
       enabled: true
@@ -78,3 +79,10 @@ resilience4j:
         maxAttempts: 3
         retryExceptions:
           - feign.FeignException$InternalServerError
+feign:
+  client:
+    config:
+      default:
+        loadBalancer:
+          enabled: true
+          algorithm: random
