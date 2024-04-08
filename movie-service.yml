@@ -16,16 +16,16 @@ spring:
     password: guest
     host: localhost
     port: 5672
-  zipkin:
-    base-url: http://localhost:9411/
-    enabled: true
-    sender:
-      type: rabbit
   application:
     name: movie-service
 
-message: "movie-service on"
-
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+##queue:
+##  movie:
+##    name: MovieQueue ejemplo de la profe para llamarlo desde application
 eureka:
   client:
     register-with-eureka: true
