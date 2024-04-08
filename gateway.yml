@@ -6,14 +6,12 @@ spring:
     name: gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: catalogServiceRoute
-          uri: lb://catalog-service/
-          predicates:
-          - Path=/catalog/**
+      mvc:
+        routes:
+          - id: catalogServiceRoute
+            uri: lb://catalog-service/
+            predicates:
+            - Path=/catalog/**
 
 management:
   tracing:
