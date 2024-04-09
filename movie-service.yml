@@ -18,7 +18,9 @@ spring:
     port: 5672
   application:
     name: movie-service
-
+queue:
+  name:
+    movie: QueueMovie
 management:
   tracing:
     sampling:
