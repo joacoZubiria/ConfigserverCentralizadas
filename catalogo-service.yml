@@ -9,6 +9,20 @@ data:
     port: 27017
 spring:
   rabbitmq:
+    listener:
+        simple:
+          default-requeue-rejected: false
+      binding:
+        listener:
+          simple:
+            queues:
+              - name: "QueueMovie"
+              - name: "QueueSerie"
+      queues:
+        - name: "QueueMovie"
+          durable: true
+        - name: "QueueSerie"
+          durable: true
     username: guest
     password: guest
     host: localhost
