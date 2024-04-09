@@ -16,12 +16,12 @@ spring:
         listener:
           simple:
             queues:
-              - name: "QueueMovie"
-              - name: "QueueSerie"
+              - name: QueueMovie
+              - name: QueueSerie
       queues:
-        - name: "QueueMovie"
+        - name: QueueMovie
           durable: true
-        - name: "QueueSerie"
+        - name: QueueSerie
           durable: true
     username: guest
     password: guest
