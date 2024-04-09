@@ -10,19 +10,19 @@ data:
 spring:
   rabbitmq:
     listener:
+      simple:
+        default-requeue-rejected: false
+    binding:
+      listener:
         simple:
-          default-requeue-rejected: false
-      binding:
-        listener:
-          simple:
-            queues:
-              - name: QueueMovie
-              - name: QueueSerie
-      queues:
-        - name: QueueMovie
-          durable: true
-        - name: QueueSerie
-          durable: true
+          queues:
+            - name: QueueMovie
+            - name: QueueSerie
+    queues:
+      - name: QueueMovie
+        durable: true
+      - name: QueueSerie
+        durable: true
     username: guest
     password: guest
     host: localhost
